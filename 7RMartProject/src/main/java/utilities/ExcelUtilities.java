@@ -15,7 +15,7 @@ public class ExcelUtilities
 	public static XSSFWorkbook wb;
 	public static XSSFSheet sh;
 	public static FileInputStream f;
-	public static String getString(int i, int j, String sheet) {
+	public static String getString(int i, int j , String sheet) {
 		String file_path = GeneralUtilities.TESTDATAFILE;
 		try {
 			f = new FileInputStream(file_path);

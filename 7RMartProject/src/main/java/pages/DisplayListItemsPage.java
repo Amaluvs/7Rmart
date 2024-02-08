@@ -13,7 +13,7 @@ public class DisplayListItemsPage
 	public DisplayListItemsPage (WebDriver driver)
 	{
 		this.driver=driver;
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver , this);
 	}
 
 	@FindBy(xpath = "//div[contains(@class,'small')]//child::div[@class='inner']") List<WebElement> menuList;

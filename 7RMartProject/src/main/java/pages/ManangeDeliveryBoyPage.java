@@ -11,7 +11,7 @@ public class ManangeDeliveryBoyPage
 	public ManangeDeliveryBoyPage (WebDriver driver)
 	{
 		this.driver=driver;
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver , this);
 		
 	}
 

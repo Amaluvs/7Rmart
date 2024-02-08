@@ -5,20 +5,23 @@ import static org.testng.Assert.assertTrue;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.sun.net.httpserver.Authenticator.Retry;
+
 import pages.LoginPage;
 import utilities.ExcelUtilities;
 
 public class LoginTest extends Base
 {
-	@Test
+	@Test(retryAnalyzer=retry.Retry.class,groups= {"Reggression"},description = "verify the user is able to login using valid credentials")
+	
 	public void verifyTheUserIsAbleToLoginUsingValidCredentials()
 	{
-		String usernameexpected= ExcelUtilities.getString(1,0,"loginpage");
-		String passwordexpected=ExcelUtilities.getString(1,1,"loginpage");
+		String username= ExcelUtilities.getString(1,0,"loginpage");
+	    String password=ExcelUtilities.getString(1,1,"loginpage");
 		
 		LoginPage loginpage=new LoginPage(driver);
-		loginpage.enterUserNameOnUserNameField(usernameexpected);
-		loginpage.enterPasswordOnPassworldField(passwordexpected);
+		loginpage.enterUserNameOnUserNameField(username);
+		loginpage.enterPasswordOnPassworldField(password);
         loginpage.clickonSignInButton();
         boolean isHomePageLoaded=loginpage.isDashBoardLoaded();
         assertTrue(isHomePageLoaded,"Home page is not loaded when user is entering valid credentials");

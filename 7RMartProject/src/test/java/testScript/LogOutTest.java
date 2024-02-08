@@ -8,11 +8,12 @@ import utilities.ExcelUtilities;
 
 public class LogOutTest extends Base
 {
-	@Test
+	@Test(retryAnalyzer=retry.Retry.class,groups= {"Reggression"},description = "verify whether the user is add a new location")
 	public void verifyWhetherTheUserIsAddANewLocation()
 	{
 		String username=ExcelUtilities.getString(1, 0,"loginpage");
 		String password=ExcelUtilities.getString(1,1,"loginpage");
+		
 		
 	    LoginPage loginpage=new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(username);

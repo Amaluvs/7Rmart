@@ -46,7 +46,7 @@ public void clickOnChooseFile() throws AWTException
 public void clickOnLink(String url)
 {
 	
-	link.sendKeys(url);
+	link.sendKeys(url );
 
 }
 public void clickOnSaveButton()

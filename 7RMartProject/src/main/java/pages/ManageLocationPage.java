@@ -14,7 +14,7 @@ public class ManageLocationPage
 	public ManageLocationPage(WebDriver driver)
 	{
 		this.driver=driver;
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver , this);
 		
 	}
 	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-location']//parent::li")WebElement managelocationinfo;

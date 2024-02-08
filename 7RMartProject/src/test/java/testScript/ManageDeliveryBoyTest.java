@@ -10,14 +10,13 @@ import utilities.ExcelUtilities;
 
 public class ManageDeliveryBoyTest extends Base
 {
-	@Test(description = "verify the deliveryboy is found in manage delivery boy page ")
+	@Test(retryAnalyzer=retry.Retry.class,description = "verify the deliveryboy is found in manage delivery boy page ")
 	public void verifytheDeliveryBoyFoundInDeliveryBoyPage()
 	{
-	String username=ExcelUtilities.getString(1, 0,"loginpage");
+	String username=ExcelUtilities.getString(1,0,"loginpage");
 	String password=ExcelUtilities.getString(1,1,"loginpage");
 	
-     String deliveryBoyName=" Camden Abernathy";
-	//String deliveryBoyName=ExcelUtilities.getString(1, 0,"managedeliveryboy");
+	String deliveryBoyName=ExcelUtilities.getString(1, 0,"managedeliveryboy");
 	LoginPage loginpage=new LoginPage(driver);
 	loginpage.enterUserNameOnUserNameField(username);
 	loginpage.enterPasswordOnPassworldField(password);

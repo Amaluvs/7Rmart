@@ -6,17 +6,20 @@ import org.testng.annotations.Test;
 
 import pages.LoginPage;
 import pages.PushNotificationsPage;
+import utilities.ExcelUtilities;
 
 public class PushNotificationsTest extends Base
 {
-	@Test
-	public void verifyWhetherTheUserIsAddANewLocation()
+	@Test(retryAnalyzer=retry.Retry.class,description = "verify whether the user is able to push notification")
+	public void verifyWhetherTheUserIsAbleToPushNotification()
 	{
-
-		String username="admin";
-		String password="admin";
-		String title=" sale";
-		String description="10% discount on every product";
+		String username= ExcelUtilities.getString(1,0,"loginpage");
+	    String password=ExcelUtilities.getString(1,1,"loginpage");
+	    String title= ExcelUtilities.getString(1,0,"pushnotification");
+	    String description=ExcelUtilities.getString(1,1,"pushnotification");
+		
+		//String title=" sale";
+		//String description="10% discount on every product";
 		
 		LoginPage loginpage=new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(username);

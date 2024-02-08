@@ -13,7 +13,7 @@ public class ManageOrdersPage
 	public ManageOrdersPage (WebDriver driver)
 	{
 		this.driver=driver;
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver , this);
 		
 	}
 

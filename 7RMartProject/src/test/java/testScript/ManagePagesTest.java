@@ -8,17 +8,22 @@ import org.testng.annotations.Test;
 
 import pages.LoginPage;
 import pages.ManagePagesPage;
+import utilities.ExcelUtilities;
 
 public class ManagePagesTest extends Base
 {
-	@Test
-	public void verifyWhetherTheUserIsUpdatedAPage() throws AWTException
+	@Test(retryAnalyzer=retry.Retry.class,description = "verify whether the user is able to update a page")
+	public void verifyWhetherTheUserIsAbleToUpdateAPage() throws AWTException
 	{
-		String username="admin";
-		String password="admin";
-		String title="Book";
-	    String descripton="costly books";
-	    String page="ten";
+		
+		String username= ExcelUtilities.getString(1,0,"loginpage");
+	    String password=ExcelUtilities.getString(1,1,"loginpage");
+	    String title= ExcelUtilities.getString(1,0,"managepage");
+	    String description=ExcelUtilities.getString(1,1,"managepage");
+	    String page=ExcelUtilities.getString(1,2,"managepage");
+		//String title="Book";
+	   // String descripton="novels";
+	   // String page="ten";
 		
 		LoginPage loginpage=new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(username);
@@ -29,12 +34,12 @@ public class ManagePagesTest extends Base
 	    managepagespage.clickOnManagePagesInfo();
 	    managepagespage.clickOnEditButton();
 	    managepagespage.clickOnManagePagesTitle(title);
-	    managepagespage.clickOnManagePagesDescription(descripton);
+	    managepagespage.clickOnManagePagesDescription(description);
 	    managepagespage.clickOnManagePagesPage(page);
         managepagespage.clickOnManagePagesImageUpload();
 	    managepagespage.clickOnManagePagesUpdateButton();
 	    boolean managepagealert= managepagespage.isManagepagesAlertDisplayed();
-	    assertTrue(managepagealert," page updation is failed");
+	    assertTrue(managepagealert,"the user is not able to update the page");
 }
 
 

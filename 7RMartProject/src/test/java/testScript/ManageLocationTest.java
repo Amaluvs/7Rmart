@@ -10,22 +10,18 @@ import utilities.ExcelUtilities;
 
 public class ManageLocationTest extends Base
 {
-	@Test(description = "verify whether the user is able to add a new location")
+	@Test(retryAnalyzer=retry.Retry.class,description = "verify whether the user is able to add a new location")
 	public void verifyWhetherTheUserIsAbleToAddANewLocation()
 	{
 		String username=ExcelUtilities.getString(1, 0,"loginpage") ;
 		String password=ExcelUtilities.getString(1,1,"loginpage");
-		
-		
-		String location="Aberdeenshire";
-		String deliveryCharge="ten";
-		
+		String location=ExcelUtilities.getString(1, 0,"managelocation") ;
+		String deliveryCharge=ExcelUtilities.getString(1,1,"managelocation");
 		LoginPage loginpage=new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(username);
 		loginpage.enterPasswordOnPassworldField(password);
 	    loginpage.clickonSignInButton();
-	    
-	    ManageLocationPage managelocationpage=new ManageLocationPage(driver);
+	  	ManageLocationPage managelocationpage=new ManageLocationPage(driver);
 	    managelocationpage.clickOnManageLocationInfo();
 	    managelocationpage.clickOnNewButton();
 	    managelocationpage.selectCountry();
@@ -33,8 +29,7 @@ public class ManageLocationTest extends Base
 	    managelocationpage.enterTheLocationField(location);
 	    managelocationpage.enterTheDeliveryCharge(deliveryCharge);
 	    managelocationpage.saveButton();
-	    
-	    boolean isnewlocationadded=managelocationpage.alertdisplayed();
+	 	boolean isnewlocationadded=managelocationpage.alertdisplayed();
 	    assertTrue(isnewlocationadded,"delivery boy page not found");
 	}
 	

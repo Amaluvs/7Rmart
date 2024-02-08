@@ -12,14 +12,14 @@ import utilities.ExcelUtilities;
 
 public class ManageExpenseTest extends Base
 {
-	@Test
-	public void verifyWhetherTheUserIsAddANewProductInformation() throws AWTException
+	@Test(retryAnalyzer=retry.Retry.class,description = "verify whether the user is able to add a new product information")
+	public void verifyWhetherTheUserIsAbleToAddANewProductInformation() throws AWTException
 	{
 		String username=ExcelUtilities.getString(1, 0,"loginpage");
 		String password=ExcelUtilities.getString(1,1,"loginpage");
-	    String date="10/8/23";
-	    String amount="hundread";
-	    String remarks=" imported icecream";
+		String date=ExcelUtilities.getString(1,0,"manageexpence");
+		String amount=ExcelUtilities.getString(1,1,"manageexpence");
+		String remarks=ExcelUtilities.getString(1,2,"manageexpence");
 	    LoginPage loginpage=new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(username);
 		loginpage.enterPasswordOnPassworldField(password);

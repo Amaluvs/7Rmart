@@ -11,7 +11,7 @@ public class LogOutPage
 	public LogOutPage(WebDriver driver)
 	{
 		this.driver=driver;
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver , this);
 	}
 	@FindBy(xpath=" //a[@data-toggle='dropdown']") WebElement admin; 
 	@FindBy(xpath=" //i[@class='ace-icon fa fa-power-off']") WebElement logouticon; 

@@ -8,14 +8,17 @@ import org.testng.annotations.Test;
 
 import pages.LoginPage;
 import pages.ManageSlidersPage;
+import utilities.ExcelUtilities;
 
 public class ManageSlidersTest extends Base
 {
-	@Test
-	public void verifyWhetherTheUserIsAddANewItem() throws AWTException
+	@Test(retryAnalyzer=retry.Retry.class,description = "verify whether the user is able to add a new item")
+	public void verifyWhetherTheUserIsAbleToAddANewItem() throws AWTException
 	{
-		String username="admin";
-		String password="admin";
+		
+		String username= ExcelUtilities.getString(1,0,"loginpage");
+	    String password=ExcelUtilities.getString(1,1,"loginpage");
+	    //String url=ExcelUtilities.getString(1,0,"manageslider");
 		String url="https:managersliders";
 		
 		LoginPage loginpage=new LoginPage(driver);

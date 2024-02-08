@@ -10,8 +10,8 @@ import utilities.ExcelUtilities;
 
 public class ManageOrdersTest extends Base
 {
-	@Test(description = "verify the alertmessage is found in manage orders page")
-	public void verifyWhetherTheDeleteAlertMessageIsFoundInmanageorderspage()
+	@Test(retryAnalyzer=retry.Retry.class,description = "verify the alertmessage is found in manage orders page")
+	public void verifyWhetherTheUserIsAbleToDeleteTheField()
 	{
 	String username=ExcelUtilities.getString(1, 0,"loginpage");
 	String password=ExcelUtilities.getString(1,1,"loginpage");
@@ -24,7 +24,7 @@ public class ManageOrdersTest extends Base
     manageorderspage.clickOnManageOrderInfo();
     manageorderspage.clickDeleteButton();
     boolean isalertDisplayed=manageorderspage.isAlertDisplayed();
-    assertTrue(isalertDisplayed,"Delete alert message not found");
+    assertTrue(isalertDisplayed,"user is unable to delete the field");
 	}  
 
 }

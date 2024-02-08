@@ -18,7 +18,7 @@ public class ManagePagesPage
 	public ManagePagesPage (WebDriver driver)
 	{
 		this.driver=driver;
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver , this);
 	}
 	@FindBy(xpath = "//i[@class='fas fa-arrow-circle-right']//parent::a[1] ")WebElement managesPagesInfo ;
 	@FindBy(xpath = "(//i[@class='fas fa-edit'])[2]")WebElement managePagesEditButton;

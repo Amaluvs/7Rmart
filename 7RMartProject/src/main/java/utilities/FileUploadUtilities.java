@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 
 public class FileUploadUtilities 
 {
-	public void fileUploadUsingSendKeys(WebElement element,String path) {	
+	public void fileUploadUsingSendKeys(WebElement  element,String path) {	
 		element.sendKeys(path);
 	
 	}

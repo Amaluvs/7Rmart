@@ -18,7 +18,7 @@ public class ManageExpensePage
 	public ManageExpensePage (WebDriver driver)
 	{
 		this.driver=driver;
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(driver , this);
 		
 	}	
 	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/expense'] ")WebElement manageexpenseinfo ;
