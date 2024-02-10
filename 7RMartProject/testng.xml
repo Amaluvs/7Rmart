@@ -7,10 +7,10 @@
 </listeners>
   <test thread-count="5" name="Test">
 	  <classes>
-		  <class name="testScript. ManageLocationTest ">
+		  <class name="testScript.DisplayListItemsTest">
 			  <methods>
 				
-				 <include name="verifyWhetherTheUserIsAbleToAddANewLocation"></include>
+				 <include name="verifyThatSelectedTileIsDisplayed"></include>
 				 
 				  
 			  </methods>
