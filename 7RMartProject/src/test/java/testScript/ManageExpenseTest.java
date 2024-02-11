@@ -24,8 +24,7 @@ public class ManageExpenseTest extends Base
 		loginpage.enterUserNameOnUserNameField(username);
 		loginpage.enterPasswordOnPassworldField(password);
 	    loginpage.clickonSignInButton();
-	    
-        ManageExpensePage manageexpensepage =new ManageExpensePage (driver);
+	    ManageExpensePage manageexpensepage =new ManageExpensePage (driver);
         manageexpensepage.clickOnManageExpenseInfo();
         manageexpensepage.clickOnNewButton();
         manageexpensepage.clickOnUserField();

@@ -21,9 +21,7 @@ public class ManagePagesTest extends Base
 	    String title= ExcelUtilities.getString(1,0,"managepage");
 	    String description=ExcelUtilities.getString(1,1,"managepage");
 	    String page=ExcelUtilities.getString(1,2,"managepage");
-		//String title="Book";
-	   // String descripton="novels";
-	   // String page="ten";
+		
 		
 		LoginPage loginpage=new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(username);

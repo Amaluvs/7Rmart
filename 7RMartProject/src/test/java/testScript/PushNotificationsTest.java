@@ -18,8 +18,7 @@ public class PushNotificationsTest extends Base
 	    String title= ExcelUtilities.getString(1,0,"pushnotification");
 	    String description=ExcelUtilities.getString(1,1,"pushnotification");
 		
-		//String title=" sale";
-		//String description="10% discount on every product";
+
 		
 		LoginPage loginpage=new LoginPage(driver);
 		loginpage.enterUserNameOnUserNameField(username);

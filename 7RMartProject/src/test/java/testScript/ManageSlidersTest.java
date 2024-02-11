@@ -18,7 +18,7 @@ public class ManageSlidersTest extends Base
 		
 		String username= ExcelUtilities.getString(1,0,"loginpage");
 	    String password=ExcelUtilities.getString(1,1,"loginpage");
-	    //String url=ExcelUtilities.getString(1,0,"manageslider");
+	    
 		String url="https:managersliders";
 		
 		LoginPage loginpage=new LoginPage(driver);
